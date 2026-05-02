@@ -1,9 +1,9 @@
 name: Build Rbx2Source
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "experimental" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "experimental" ]
   workflow_dispatch:
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: msbuild Rbx2Source.sln
     -  name: Upload Artifact  
-       uses: actions/upload-artifact@v3
+       uses: actions/upload-artifact@v4
        with:
          name: Rbx2Source
          path: bin/Debug/Rbx2Source.exe
